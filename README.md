@@ -5,4 +5,4 @@ Data Mining and Pattern Recognition @ HdM
 3. Recommender System
 4. Document Classification
 5. Face Recognition
-6. t.b.a.
+6. CNN - Traffic Sign Classification
