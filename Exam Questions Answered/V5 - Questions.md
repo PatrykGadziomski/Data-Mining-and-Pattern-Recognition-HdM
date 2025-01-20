@@ -1,4 +1,4 @@
-1. Was sind Eigenvekotren und Eigenwerte?
+1. Was sind Eigenvektoren und Eigenwerte?
 
 ```
 Eigenvektoren:
@@ -14,7 +14,7 @@ Eigenwerte:
 Eigenfaces sind Eigenvektoren und werden so genannt wenn diese für Gesichtserkennung verwendet werden.
 ```
 
-3. Wie kann mit der PCA eine Dimensionalitätssreduktion durchgeführt werden?
+3. Wie kann mit der PCA eine Dimensionsreduktion durchgeführt werden?
 
 ```
 1. Normierung

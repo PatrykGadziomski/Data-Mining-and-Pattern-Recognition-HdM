@@ -4,39 +4,29 @@ ___
 ![[Pasted image 20250110124536.png|400]]![[Pasted image 20250110124759.png|400]]
 
 ```
+Beschreiben: was sehen wir? Was sind die schlechtesten und besten Ergebnisse? Was fällt auf?
+
+Interpretieren: Die Ergbnisse erklären. Warum sind sie so wie sie sind? Domnänendenken!
+
 Classification Report
 	- Ein classification Report enthält die folgenden Metriken für jede Klasse: Precision, Recall, F1-Scpre und Support
 
 Confusion Matrix
-	- Doe Confusion Matrix gibt einen Überblick über die tatsächlichen und vorhergesagten Klassifikationen_ True Positive, True Negative und False Negative, False Positive
-
-Intepretation:
-	- Precision: Niedrige Precision in einer Klasse weist auf viele False Positives hin
-	    - Zu weniger Trainingdaten für eine Klasse
-	    - Feature ist nicht aussagekräftig genug für diese Klasse
-    - Recall: Ein niedriger Recall zeigt, dass der Klassifikation viele tatsächlichen Instanzen der Klasse nicht erkennt
-	    - Zu weniger Trainingdaten für eine Klasse
-	    - Feature ist nicht aussagekräftig genug für diese Klasse
-    - F1-Score: Diese Metrik ist wichtig, wenn Precision und Recall für eie Klasse stark variieren
-    - Confusion Matrix: Identifiziert die Klassen, die häufig verwechselt werden. 
-	    - Sind die Klassen ausreichend trennbar von einander?
-	    - Die Feature-Selektion oder -Extraktion verbessern
-	    - Sind die Daten gleichmäßig verteilt?
+	- Die Confusion Matrix gibt einen Überblick über die tatsächlichen und vorhergesagten Klassifikationen_ True Positive, True Negative und False Negative, False Positive
 ```
 
  2. In welchen Fällen macht eine Kreuzvalidierung Sinn? Warum ist diese sinnvoll?
 
 ```
+Generalisierung!
+
 Fälle:
 - Kleine Datenmengen
-- Modellvergleich
 - Ungleichverteilung in der Datenverteilung
-- Verlässliche Evaluierung
 
 Sinn:
 - Reduzierung von Bias und Varianz in der Evaluation
 - Alle Datenpunkte werden sowohl für das Training als auch für das Testen verwendet
-- Robustere Schätzung der Modellierung durch Verwendung von Mittelwert und Standardabweichung
 - Erkennung von Datenabhängigkeit
 ```
 
@@ -65,11 +55,10 @@ Beispiele:
 Typische Skalisierungvariante: Min-Max-Skalierung
 
 Skalierung erst nach dem Split:
-- Wenn die Skalierung vor dem Split durchgeführt wird, werden Informatinen aus den testdaten in den Mittelwert oder die Standardabweichung der Skalisierung einfließen. Dadurch wird ein Teil der Testdaten indirekt "bekannt".
+- Sonst fließen Testdaten in die Trainingsdaten ein
 
 Darauf ist zu achten:
 - Die Skalierung muss für Trainings- und Testdaten getrennt erfolgen
-- Die Skalierung wird ausschließlich auf den Trainingsdaten berechnet
 - Skalierungsverfahren können von Ausreißern stark beeinflusst werden
 ```
 
@@ -130,7 +119,7 @@ Die Methode `describe()` eines Pandas-DataFrames erzeugt eine zusammenfassende S
 9. Welche Funktion kann verwendet werden um herauszufinden ob es `None`\- oder `NaN`\-Werte in einem Pandas-DataFrame gibt? Welche Funktion wird verwendet um diese zu entfernen? Mit welcher Methode kann man fehlende Werte ersetzen?
 
 ```
-Herausfinden: .isnull() oder .isna() für None oder Nan Werte, .any() für fehlende Werte
+Herausfinden: .isnull() oder .isna() für None oder Nan Werte.
 
 Entfernen: .dropna() entfernt Zeilen oder Spalten, die fehlende Werte enthalten.
 
@@ -141,8 +130,6 @@ Ersetzen: .fillna() ersetzt fehlende Werte mit einem angegebenen Wert.
 
 ```
 .unique() gibt ein array zurück, welche alle eindeutigen Werte in der Spalte enthält.
-
-.nunique() gibt die Anzahl der eindeutigen Werte in der Spalte zurück.
 ```
 
 11. Bild eines Boxplots mit durchnummerierten Bestandteilen. Erklären Sie die Bestandteile dieses Boxplots.
@@ -150,13 +137,16 @@ Ersetzen: .fillna() ersetzt fehlende Werte mit einem angegebenen Wert.
 ```
 Box: Interquartilsbereich, der die mittleren 50% der Daten umfasst
 
+Obere Rand: Oberes Quartil
+Unterer Rand: Unteres Quartil
+
 Median: Die Linie innerhalb des Kastens stellt den media dar
 
-Whiskers:Linien, die vom Kasten nach oben und unten führen und den Bereich der "normalen" daten anzeigen
-
-Outlier: Datenpunkte, die außerhalb des Bereichs der Whiskers liegen
+Whiskers: Linien, die vom Kasten nach oben und unten führen und den Bereich der "normalen" daten anzeigen
 
 Minimum und Maximum: Kleinster und größter Wert innerhalb des normalen Bereichs
+
+Outlier: Datenpunkte, die außerhalb des Bereichs der Whiskers liegen
 ```
 
 12. Sie haben einen Pandas-DataFrame mit numerischen und kategorischen Werten. Für welchen Datentyp verwenden Sie einen Barplot und für welchen Datentyp ein Histogram?
@@ -197,9 +187,10 @@ Um die Werte [0, 1, 1.5, 3] den passenden Histogram-Bins zuzuordnen, müssen wir
 
 ```
 - Auf fehlende Werte und Outlier überprüfen
-- Skalierung der Daten
+- In numerische und kategorische Daten aufteilen
+- kategorische Daten one-hot-encodieren
 - Aufteilung der Daten in Training- und Testsets
-- Modellwahl (Linear Regression, Logistic Regression, etc.)
+- numerische Skalierung der Daten
 ```
 
 17. Nennen Sie zwei Strategien für eine Hyperparameteroptimierung und beschreiben Sie jeweils kurz das vorgehen?

@@ -40,11 +40,12 @@ Mit dem Befehl model.summary()
 5. Welche Aufgabe hat ein Dropout-Layer? Worauf ist während der Evaluationsphase/Testphase zu achten?
 
 ```
-Durch den Dropout-Layer wird eine zufällige ANzahl an Neuronen ausgeschaltet (auf 0 setzen).
+Durch den Dropout-Layer wird eine zufällige ANzahl an Weights ausgeschaltet (auf 0 setzen).
 - Das hilft Overfotting zu verhindern.
 
 Während der Testphase wird kein Dropout angewedet.
-- Alle Neuronen sind aktiv.
+- Alle Weights sind aktiv.
+- Dropout = 0.0
 ```
 
 6. Welches Lernverfahren implementiert der Adam-Algorithmus?
@@ -70,11 +71,11 @@ Output: (100, 32, 32, 3)
 Convolution-Layer:
 - Extrahiert Merkmale aus den Eingabedaten
 - Berechnung neuer Feature-Maps
-- Behaltet die räumliche Struktur aber Reduktion aus abstrahierte Features
+- Lernbare Gewichte
 
 Pooling-Layer:
 - Reduziert die Dimensionen der Daten und spart Ressourcen
 - Berechnet einen zusammenfassenden Wert pro Region
-- Reduziert räumiche Auflösung
+- Keine Lernbare Gewichte
+- Dient für eine kleine Invarianz
 ```
-

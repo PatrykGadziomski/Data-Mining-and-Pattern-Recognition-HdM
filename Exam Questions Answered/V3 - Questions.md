@@ -52,17 +52,14 @@ Vorteile:
 6. Nennen Sie zwei bekannte Ähnlichkeitsmaße.
 
 ```
-1. Euklidische Distanz
-2. Pearson Korrelation
-3. Cosinus Ähnlichkeitsmaß
+1. Pearson Korrelation
+2. Cosinus Ähnlichkeitsmaß
 ```
 
 7. In welchen Fällen sind Cosinus- und Pearsonähnlichkeit der euklidischen Ähnlichkeit vorzuziehen?
 
 ```
-- Wenn nur die Richtung oder das Muster der Bewertung wichtig ist
 - Wenn Normiereung der Daten erforderlich ist
-
 - Wenn die lineare Beziehung zwischen Variablen wichtig ist
 - Wenn Skalierungsunterschiede zwischen den Vektoren vorhanden sind
 ```
@@ -80,7 +77,6 @@ Vorteile:
 
 ```
 - Bei binären Vektoren
-- Wenn man nur die Anzahl er Merkmale berücksichtigen soll
 ```
 
 10. Gegeben ist eine User-Item-Matrix mit Filmbewertungen und der berechneten euklidischen und Pearson Ähnlichkeit zwischen zwei Personen. Diskutieren Sie die unterschiedlichen Ähnlichkeitswerte. Worauf sind diese zurückzuführen?

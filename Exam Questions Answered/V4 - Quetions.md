@@ -28,6 +28,11 @@ Annahme: Alle Eingabevektoren sind unabhängig voneinander.
 
 ```
 P(w|G) bzw. P(w|B) sind 0 wenn w nich in G oder B ist, somit würde auch das Produkt in P(G|D) bzw. P(B|D) gleich 0 sein. Dadurch sind dann auch P(G|D) bzw. P(B|D) gleich 0 wodurch D mit einer Wahrscheinlichkeit von 0 in B bzw. G ist. Das Problem könnte gelöst werden wenn man eine Standard wert einführt (zb. 0.1), damit nicht durch ein einzelens Wort in einem Dokument D, das nicht in den Trainingsdaten ist, ein Dokument nicht zugewiesen werden kann.
+
+Initialwert:
+- Bei 10 Klassen: 0.1
+- Bei 2 KLassen: 0.5
+- etc.
 ```
 
 5. Wie könnte die Klassifikationsgüte durch Modifikation der `getwords()`\-Methode verbessert werden?
@@ -72,7 +77,7 @@ Precision: Misst wie viele der als positiv vorhergesagten Datenpunkte, tatsächl
 - Hohe Precision: Das Modell erzeugt kaum falsche Alarme
 - Wichtig bei Genauigkeit der positiven Vorhersagen
 
-Recall: Misst wie viele der tatsächlichen positiven Datenpunkte korrelt als positiv vorhergesagt wurden
+Recall: Die Anzahl der positiven Datenunkte in der Menge aller positiven Punkte die tatsächlich als positiv erkannt wurden.
 - Hoher Recall: Wenig positive Datenpunkte werden übersehen
 - Wichtig wenn alle positiven Fälle erkannt werden sollen
 ```

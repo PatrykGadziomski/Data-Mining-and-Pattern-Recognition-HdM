@@ -2,7 +2,10 @@ ___
 1. Beschreiben Sie kurz das Clustering-Verfahren KMeans. Was sind die jeweiligen Vor- und Nachteile dieser Methode?
 
 ```
-Das KMeans-Verfahren clustern Datenpunkte in eine vorgegebene Anzahl k von Clustern. Es basiert auf der Minimierung der Summe der quadratischen Abstände zwischen den Datenpunkten und den Zentroid ihrer hweiligen Cluster.
+Die Schritte hinschreiben!
+
+Bei dem KMeans Clustering Verfahren werden anfangs zufällige Cluster Mitten ausgewählt.
+Die Trainingsdaten werden dem Cluster zugewiesen, wessen Mitte am nächsten ist. Für jedes Cluster wird die Mitte neu ermittelt in dem der Schwerpunkt von allen Trainigsdaten berechnet wird, welche zu einem Cluster zugeteilt wurden. Wenn sich die Mitten der Cluster nicht mehr verschieben ist das Clustering fertig.
 
 Vorteile:
 - Rechneffizient, besonders für große Datenmengen
@@ -17,17 +20,19 @@ Nachteile:
 2. Beschreiben Sie kurz das Clustering-Verfahren DBSCAN. Was sind die jeweiligen Vor- und Nachteile dieser Methode?
 
 ```
-Das DBSCAN-Verfahren, erkennt dichte Regionen in Daten. Es basiert darauf, das Cluster Bereiche mit hoher Punktdichte sind, getrennt durch Regionen mit geringer Punktdichte. Es erfordert einen Epsilon, als Mitte des Clustern und eine minimale Anzahl an Punkten für ein Cluster. Es wird zwischen Kern- und Randpunkten unterschieden.
+Die Schritte hinschreiben!
+
+Der DBSCAN ermöglicht es, Cluster in einem Datensatz zu identifizieren der nicht nur auf räumlicher Nähe, sondern auch auf Dichte basiert. Anders als bei K-Means benötigt DBSCAN keine im voraus festgelegten Cluster. Somit ist dieser Algorithmus flexibler als andere.
+Ein zufällig nicht besuchter Kernpunkt wird ausgewählt und alle erreichbaren Punkte in seiner Nachbarshaft werden identifiziert. Diese Punkt bilden ein Cluster. Dieser Vorgang wird nun wiederholt, indem er neue Kernpunkte findet, die nicht Teil eines Clusters sind, und die Nachbarschaft jedes Kernpunkts durchsucht, bis alle Kernpunkte besucht wurden.
 
 Vorteile:
 - Markiert isolierte Punkte als Rauschen
-- Erkennt Clustern mit unregelmäßigen Formen
 - Anzahl der Cluster muzss nicht festgelegt werden
-- Funktioniert gut bei grpßen Datensätzen
+- Funktioniert gut bei großen Datensätzen
 
 Nachteile:
+- Es kann schwirig sein Ausreißer zu behandeln
 - Hängt stark von den gewählten Parametern ab
-- Schwierigkewiten bei start variierenden Dichten von Clustern
 - Anfällig für Datenskalierung und Distanzmetriken
 ```
 
@@ -68,7 +73,7 @@ Paitplot: Sammlung von Scatter Plots und Histogrammen
  6. Wofür wird der PCA-Algrithmus verwendet?
 
 ```
-- Dimensionalitätsreduktion
+- Dimensionsreduktion
 ```
 
  7. [Bild eines Beispiel-Clusterings wie im Notebook (Scatterplot, Barplots/Boxplots, Bilder)] Sie erhalten das Ergebnis eines Clusterings von Pokemon-Daten. Welche Merkmale (numerische oder kategorische) haben Ihrer Meinung nach den größten Einfluss auf das Ergebnis? Begründen Sie ihre Antwort anhand der verfügbaren Plots.
